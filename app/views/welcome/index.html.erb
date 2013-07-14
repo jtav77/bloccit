@@ -1,2 +1,23 @@
-<h1>Welcome to Bloccit</h1>
-<p>This is the home page for Bloccit.</p>
+<div class="hero-unit">
+  <h1>Bloccit</h1>
+  <p>Bloccit is a resource for sharing links with your friends!</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-large' %> or
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-large' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2>Sharing the best of the Web</h2>
+    <p>You can't link a thought!  Use Bloccit to share interesting stories and sites with friends easily.</p>
+  </div>
+  <div class="span4">
+    <h2>Converse anytime</h2>
+    <p>You can't always be in the same room, but you can involve your friends in the same real-time conversations.</p>
+  </div>
+  <div class="span4">
+    <h2>Sometimes it just needs a picture...</h2>
+    <p>Don't try to explain the hilarity of LOLcats... just share the pic.</p>
+  </div>
+</div>
