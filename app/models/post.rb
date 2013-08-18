@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   belongs_to :user
   belongs_to :topic
-  attr_accessible :body, :title, :topic, :image
+  attr_accessible :body, :title, :topic, :image, :comments
   
   mount_uploader :image, ImagesUploader
 
