@@ -36,6 +36,7 @@ class Ability
       can :manage, Post, :user_id => user.id
       can :manage, Comment, :user_id => user.id
       can :create, Vote
+      can :manage, Favorite, user_id: user.id 
     end
 
     # Moderators can delete any post
@@ -47,7 +48,6 @@ class Ability
     # Admins can do anything
     if user.role? :admin
       can :manage, :all
-      can :create, Vote
     end
 
     can :read, :all
