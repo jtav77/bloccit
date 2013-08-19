@@ -35,6 +35,7 @@ class Ability
     if user.role? :member
       can :manage, Post, :user_id => user.id
       can :manage, Comment, :user_id => user.id
+      can :create, Vote
     end
 
     # Moderators can delete any post
@@ -46,6 +47,7 @@ class Ability
     # Admins can do anything
     if user.role? :admin
       can :manage, :all
+      can :create, Vote
     end
 
     can :read, :all
