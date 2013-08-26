@@ -14,8 +14,12 @@
     <p><%= render partial: 'comments/comment', collection: @comments %></p>
     <% if can? :create, Comment %>
       <hr/>
+  	  <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
+  	  <br/>
+  	<div class="js-new-comment hide">
       <h4>New Comment</h4>
-    <p><%= render partial: "comments/form", locals: { topic: @topic, comment: @comment, post: @post } %>
+      <p><%= render partial: "comments/form", locals: { topic: @topic, comment: @comment, post: @post } %>
+    </div>
     <% end %>
   </div>
   <div class="span4">
