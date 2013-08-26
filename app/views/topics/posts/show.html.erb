@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row js-posts-page">
   <div class="span8">
     <%= render partial: 'vote/voter', locals: { topic: @topic, post: @post } %>
     <h1><%= markdown @post.title %></h1>
@@ -13,14 +13,18 @@
     <hr/>
 
     <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
-    <p><%= render partial: 'comments/comment', collection: @comments %></p>
+	<div class="js-comments">
+      <p><%= render partial: 'comments/comment', collection: @comments %></p>
+    </div>
     <% if can? :create, Comment %>
       <hr/>
   	  <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
   	  <br/>
   	<div class="js-new-comment hide">
       <h4>New Comment</h4>
-      <p><%= render partial: "comments/form", locals: { topic: @topic, comment: @comment, post: @post } %>
+  	  <div class="js-comment-form">	
+        <p><%= render partial: "comments/form", locals: { topic: @topic, comment: @comment, post: @post } %>
+      </div>
     </div>
     <% end %>
   </div>
